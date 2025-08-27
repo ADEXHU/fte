@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Data Purchase</title>
+  <link rel="stylesheet" href="assets/css/data.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">Aribak Connect</div>
+      <nav>
+        <ul>
+          <li><a href="#">🏠 Dashboard</a></li>
+          <li><a href="#">📱 Airtime</a></li>
+          <li><a href="#">🌐 Data</a></li>
+          <li><a href="#">💡 Bills</a></li>
+          <li><a href="#">📺 Cable TV</a></li>
+          <li><a href="#">📝 Exam</a></li>
+          <li><a href="#">💳 Recharge Card</a></li>
+          <li><a href="#">📑 Transactions</a></li>
+          <li><a href="#">💬 Live Chat</a></li>
+          <li><a href="#">⚙️ Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <h2>Buy Mobile Data</h2>
+
+      <!-- Phone Number Input -->
+      <div id="phone-number-section">
+        <label for="phone-number">Enter Your Phone Number:</label>
+        <input type="text" id="phone-number" placeholder="e.g., 08012345678" />
+        <button onclick="nextStep()">Next</button>
+      </div>
+
+      <!-- Network Selection -->
+      <div id="network-section" style="display:none;">
+        <h3>Select Your Network</h3>
+        <div class="network-cards">
+          <div class="network-card" onclick="selectNetwork('mtn')">MTN</div>
+          <div class="network-card" onclick="selectNetwork('glo')">GLO</div>
+          <div class="network-card" onclick="selectNetwork('airtel')">AIRTEL</div>
+          <div class="network-card" onclick="selectNetwork('9mobile')">9MOBILE</div>
+        </div>
+      </div>
+
+      <!-- Category Selection -->
+      <div id="category-section" style="display:none;">
+        <h3>Select Data Category</h3>
+        <div class="category-cards">
+          <div class="category-card" onclick="selectCategory('smeData')">SME Data</div>
+          <div class="category-card" onclick="selectCategory('corporateData')">Corporate Data</div>
+          <div class="category-card" onclick="selectCategory('giftData')">Gift Data</div>
+        </div>
+      </div>
+
+      <!-- Bundle Selection -->
+      <div id="bundle-section" style="display:none;">
+        <h3>Select Data Bundle</h3>
+        <div id="bundles" class="bundle-cards"></div>
+      </div>
+
+      <!-- Confirmation -->
+      <div id="confirm-section" style="display:none;">
+        <h3>Confirm Your Purchase</h3>
+        <p id="confirm-text"></p>
+        <input type="password" id="pin" placeholder="Enter PIN">
+        <button onclick="confirmPurchase()">Confirm</button>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Success Popup Modal -->
+  <div id="success-popup" class="popup-modal" style="display:none;">
+    <div class="popup-content">
+      <h3>Purchase Successful!</h3>
+      <p>Your data purchase was successful. Thank you for using Aribak Connect!</p>
+      <button onclick="closeSuccessPopup()">Close</button>
+    </div>
+  </div>
+
+  <!-- Loading Spinner -->
+  <div id="loading-spinner" class="spinner" style="display:none;"></div>
+
+  <script src="assets/js/data.js"></script>
+</body>
+</html>

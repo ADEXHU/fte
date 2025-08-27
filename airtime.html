@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airtime Purchase - Aribak Connect</title>
+  <link rel="stylesheet" href="assets/css/airtime.css">
+</head>
+<body>
+  <div class="dashboard">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">Aribak Connect</div>
+      <nav>
+        <ul>
+          <li><a href="#">🏠 Dashboard</a></li>
+          <li><a href="#">📱 Airtime</a></li>
+          <li><a href="data.html">🌐 Data</a></li>
+          <li><a href="bills.html">💡 Bills</a></li>
+          <li><a href="cable.html">📺 Cable TV</a></li>
+          <li><a href="exam.html">📝 Exam</a></li>
+          <li><a href="recharge-card.html">💳 Recharge Card</a></li>
+          <li><a href="#">📑 Transactions</a></li>
+          <li><a href="support.html">💬 Live Chat</a></li>
+          <li><a href="#">⚙️ Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <header>
+        <h2>Airtime Purchase</h2>
+      </header>
+
+      <!-- Airtime Purchase Form -->
+      <section class="airtime-purchase">
+        <h3>Select Network and Amount</h3>
+
+        <!-- Network Selection via Images -->
+        <div class="network-selection">
+          <div class="network-card" onclick="selectNetwork('mtn')">
+            <img src="assets/images/mtn.jpg" alt="MTN" id="mtn-img" />
+          </div>
+          <div class="network-card" onclick="selectNetwork('glo')">
+            <img src="assets/images/glo.jpg" alt="GLO" id="glo-img" />
+          </div>
+          <div class="network-card" onclick="selectNetwork('airtel')">
+            <img src="assets/images/airtel.jpg" alt="Airtel" id="airtel-img" />
+          </div>
+          <div class="network-card" onclick="selectNetwork('9mobile')">
+            <img src="assets/images/9moblie.jpg" alt="9Mobile" id="9mobile-img" />
+          </div>
+        </div>
+
+        <p><strong>Selected Network: </strong><span id="selected-network">None</span></p>
+
+        <!-- Amount and Password Form -->
+        <form id="airtime-form">
+          <div class="form-group">
+            <label for="amount">Enter Amount (₦)</label>
+            <input type="number" id="amount" name="amount" placeholder="Amount" required />
+          </div>
+
+          <!-- Phone Number Input -->
+          <div class="form-group">
+            <label for="phone-number">Enter Your Phone Number</label>
+            <input type="text" id="phone-number" name="phone-number" placeholder="Your phone number" required />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Enter Your Password</label>
+            <input type="password" id="password" name="password" placeholder="Your password" required />
+          </div>
+
+          <p><strong>Available Balance: </strong>₦<span id="available-balance">5000.00</span></p>
+
+          <button type="submit" class="purchase-btn">Confirm Purchase</button>
+        </form>
+
+        <!-- Confirmation Display -->
+        <div id="confirmation" class="confirmation">
+          <h4>Confirm Your Purchase</h4>
+          <p><strong>Network:</strong> <span id="confirm-network"></span></p>
+          <p><strong>Amount:</strong> ₦<span id="confirm-amount"></span></p>
+          <p><strong>Phone Number:</strong> <span id="confirm-phone-number"></span></p>
+          <button onclick="finalizePurchase()" class="confirm-btn">Proceed with Payment</button>
+          <button onclick="resetForm()" class="reset-btn">Edit</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/transaction.js"></script>
+</body>
+</html>

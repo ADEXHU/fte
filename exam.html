@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam Payment</title>
+  <link rel="stylesheet" href="assets/css/data.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">Aribak Connect</div>
+      <nav>
+        <ul>
+          <li><a href="#">🏠 Dashboard</a></li>
+          <li><a href="#">📱 Airtime</a></li>
+          <li><a href="#">🌐 Data</a></li>
+          <li><a href="#">💡 Bills</a></li>
+          <li><a href="#">📺 Cable TV</a></li>
+          <li><a href="#">📝 Exam</a></li>
+          <li><a href="#">💳 Recharge Card</a></li>
+          <li><a href="#">📑 Transactions</a></li>
+          <li><a href="#">💬 Live Chat</a></li>
+          <li><a href="#">⚙️ Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <h2>Exam Payment</h2>
+
+      <!-- User Balance -->
+      <section class="balance-section">
+        <h3>Your Balance: ₦<span id="user-balance">5000</span></h3> <!-- Example balance -->
+      </section>
+
+      <!-- Exam Biller Selection -->
+      <div id="biller-selection-section">
+        <h3>Select Exam Biller</h3>
+        <div class="category-cards">
+          <div class="category-card" onclick="selectBiller('waec')">
+            <img src="assets/images/waec.png" alt="WAEC" />
+            <p>WAEC</p>
+          </div>
+          <div class="category-card" onclick="selectBiller('neco')">
+            <img src="assets/images/neco.png" alt="NECO" />
+            <p>NECO</p>
+          </div>
+          <div class="category-card" onclick="selectBiller('nabteb')">
+            <img src="assets/images/nabteb.png" alt="NABTEB" />
+            <p>NABTEB</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quantity and Amount Entry -->
+      <div id="payment-details-section" style="display:none;">
+        <h3>Enter Quantity</h3>
+        <input type="number" id="quantity" placeholder="Enter Quantity (number of forms)" />
+        <p id="total-amount" style="text-align: center;"></p>
+        <button onclick="confirmPaymentDetails()">Confirm Payment</button>
+      </div>
+
+      <!-- Confirmation Popup -->
+      <div id="confirmation-popup" style="display:none;">
+        <h3>Confirm Your Payment Details</h3>
+        <p id="confirmation-text"></p>
+        <button onclick="showPinSection()">Confirm</button>
+        <button onclick="closeConfirmationPopup()">Cancel</button>
+      </div>
+
+      <!-- PIN Confirmation -->
+      <div id="pin-section" style="display:none;">
+        <h3>Enter Your PIN to Confirm</h3>
+        <input type="password" id="pin" placeholder="Enter PIN" />
+        <button onclick="processPayment()">Confirm Payment</button>
+      </div>
+
+      <!-- Success Popup -->
+      <div id="success-popup" class="popup-modal" style="display:none;">
+        <div class="popup-content">
+          <h3>Payment Successful!</h3>
+          <p>Your exam payment was successful. Thank you for using Aribak Connect!</p>
+          <button onclick="closeSuccessPopup()">Close</button>
+        </div>
+      </div>
+
+      <!-- Insufficient Funds Popup -->
+      <div id="insufficient-funds-popup" class="popup-modal" style="display:none;">
+        <div class="popup-content">
+          <h3>Insufficient Funds</h3>
+          <p>Your entered amount exceeds your current balance. Please try again with a lower amount.</p>
+          <button onclick="closeInsufficientFundsPopup()">Close</button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="assets/js/exam.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Dashboard - Aribak Connect</title>
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+  <div class="dashboard">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">Aribak Connect</div>
+      <nav>
+        <ul>
+          <li><a href="#">🏠 Dashboard</a></li>
+          <li><a href="airtime.html">📱 Airtime</a></li>
+          <li><a href="data.html">🌐 Data</a></li>
+          <li><a href="bills.html">💡 Bills</a></li>
+          <li><a href="cable.html">📺 Cable TV</a></li>
+          <li><a href="exam.html">📝 Exam</a></li>
+          <li><a href="recharge-card.html">💳 Recharge Card</a></li>
+          <li><a href="#">📑 Transactions</a></li>
+          <li><a href="support.html">💬 Live Chat</a></li>
+          <li><a href="#">⚙️ Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <header>
+        <h2>Welcome, User</h2>
+        <div class="header-actions">
+          <button onclick="toggleDarkMode()">🌙</button>
+          <button class="logout">Logout</button>
+        </div>
+      </header>
+
+      <!-- Wallet -->
+      <section class="wallet">
+        <h3>Wallet Balance</h3>
+        <p id="balance">₦5,000.00</p>
+        <button class="fund" onclick="openFundingOptions()">+ Fund Wallet</button>
+      </section>
+
+      <!-- Offerings -->
+      <section class="offers">
+        <h3>What We Offer</h3>
+        <div class="offer-grid">
+          <div class="offer-card">📱 Buy Airtime</div>
+          <div class="offer-card">🌐 Buy Data</div>
+          <div class="offer-card">💡 Pay Bills</div>
+          <div class="offer-card">📺 Cable TV</div>
+          <div class="offer-card">📝 Exam Pins</div>
+          <div class="offer-card">💳 Recharge Cards</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Funding Options Modal -->
+  <div id="fundingModal" class="modal">
+    <div class="modal-content">
+      <h3>Select Funding Method</h3>
+      <button onclick="openManualFunding()">🏦 Manual Funding</button>
+      <button onclick="openMonnifyFunding()">💳 Monnify Funding</button>
+      <button onclick="closeModal('fundingModal')">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Manual Funding Modal -->
+  <div id="manualModal" class="modal">
+    <div class="modal-content">
+      <h3>Manual Funding</h3>
+      <p>Transfer to: <br><strong>Bank: Zenith Bank<br>Acct No: 1234567890<br>Name: Aribak Connect</strong></p>
+      <p>After transfer, upload your receipt below:</p>
+      <input type="file" id="receiptUpload">
+      <button onclick="submitReceipt()">Upload Receipt</button>
+      <button onclick="closeModal('manualModal')">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Monnify Funding Modal -->
+  <div id="monnifyModal" class="modal">
+    <div class="modal-content">
+      <h3>Monnify Payment</h3>
+      <p>Choose your funding method:</p>
+      <button onclick="confirmMonnify('Card')">💳 Pay with Card</button>
+      <button onclick="confirmMonnify('Bank Transfer')">🏦 Bank Transfer</button>
+      <button onclick="closeModal('monnifyModal')">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <h3>✅ Success</h3>
+      <p id="successMessage"></p>
+      <button onclick="closeModal('successModal')">OK</button>
+    </div>
+  </div>
+
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

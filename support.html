@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Chat - Aribak Connect</title>
+  <link rel="stylesheet" href="assets/css/support.css">
+</head>
+<body>
+  <div class="dashboard">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">Aribak Connect</div>
+      <nav>
+        <ul>
+          <li><a href="#">🏠 Dashboard</a></li>
+          <li><a href="#">📱 Airtime</a></li>
+          <li><a href="#">🌐 Data</a></li>
+          <li><a href="#">💡 Bills</a></li>
+          <li><a href="#">📺 Cable TV</a></li>
+          <li><a href="#">📝 Exam</a></li>
+          <li><a href="#">💳 Recharge Card</a></li>
+          <li><a href="#">📑 Transactions</a></li>
+          <li><a href="#">💬 Live Chat</a></li>
+          <li><a href="#">⚙️ Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <header>
+        <h2>Live Chat</h2>
+      </header>
+
+      <!-- Chat Window -->
+      <section class="chat-window">
+        <div class="messages" id="messages">
+          <!-- Messages will appear here -->
+        </div>
+        <input type="text" id="chat-input" placeholder="Type your message..." />
+        <button id="send-btn" onclick="sendMessage()">Send</button>
+        <input type="file" id="image-upload" onchange="uploadImage()" style="display:none;" />
+        <button id="image-btn" onclick="document.getElementById('image-upload').click()">Upload Image</button>
+      </section>
+
+      <!-- Floating Chat Button -->
+      <button class="floating-chat-btn" onclick="openChat()">
+        💬
+      </button>
+    </main>
+  </div>
+
+  <script src="assets/js/support.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - Aribak Connect</title>
+  <link rel="stylesheet" href="assets/css/forms.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Create Account</h2>
+    <form id="registerForm">
+      <input type="text" id="fullname" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="tel" id="phone" placeholder="Phone Number" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <p id="passwordStrength"></p>
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+
+      <!-- Referral Code (optional) -->
+      <input type="text" id="referralCode" placeholder="Referral Code (Optional)">
+
+      <label for="otpMethod">Choose OTP Method:</label>
+      <select id="otpMethod" required>
+        <option value="">-- Select --</option>
+        <option value="email">Email</option>
+        <option value="phone">Phone</option>
+      </select>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <!-- OTP Popup -->
+  <div id="otpPopup" class="popup">
+    <div class="popup-content">
+      <h3>Enter OTP</h3>
+      <p id="otpMessage">We sent a code to your selected method.</p>
+      <input type="text" id="otpInput" placeholder="Enter OTP" maxlength="6">
+      <button onclick="verifyOtp()">Verify OTP</button>
+    </div>
+  </div>
+
+  <!-- Success Popup -->
+  <div id="successPopup" class="popup">
+    <div class="popup-content">
+      <h3>🎉 Registration Successful!</h3>
+      <p>Your account has been created. Please login to continue.</p>
+      <button onclick="closePopup()">OK</button>
+    </div>
+  </div>
+
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>
